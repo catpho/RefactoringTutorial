@@ -6,7 +6,12 @@ public class sudokuReviewer {
     public static void main(String[] args) {
     	int[][] sudokutemp = sudokuSetup.createDefaultTemp();
     	System.out.println("Here is the starting Sudoku:");
-    	printSudoku(sudokutemp);
+    	for (int[] row : sudokutemp) {
+		    for (int num : row) {
+		        System.out.print(num + " ");
+		    }
+		    System.out.println();
+		}
     	
     	int[][] sudokuSol = sudokuSetup.Solutionset();
     	
@@ -15,7 +20,12 @@ public class sudokuReviewer {
     	System.out.println("");
     	System.out.println("");
     	System.out.println("Here is proposed solution to Sudoku:");
-    	printSudoku(sudokuwrong);
+    	for (int[] row : sudokuwrong) {
+		    for (int num : row) {
+		        System.out.print(num + " ");
+		    }
+		    System.out.println();
+		}
     	System.out.println("");
     	System.out.println("");
     	
@@ -34,7 +44,12 @@ public class sudokuReviewer {
     	System.out.println("Here's the proof!All wrong entries highlighted as '-1's!");
         //printSudoku(sudokuSol);
     	compareAndReplace(sudokuSol,sudokuwrong);
-    	printSudoku(sudokuwrong);
+    	for (int[] row : sudokuwrong) {
+		    for (int num : row) {
+		        System.out.print(num + " ");
+		    }
+		    System.out.println();
+		}
     }
 
 	public static boolean validPositions(int[][] board) {
@@ -115,15 +130,6 @@ public class sudokuReviewer {
                     solution2[i][j] = -1;
                 }
             }
-        }
-    }
-
-    private static void printSudoku(int[][] sudoku) {
-        for (int[] row : sudoku) {
-            for (int num : row) {
-                System.out.print(num + " ");
-            }
-            System.out.println();
         }
     }
 }
