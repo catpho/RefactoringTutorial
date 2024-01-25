@@ -43,7 +43,7 @@ public class sudokuReviewer {
         }
     	System.out.println("Here's the proof!All wrong entries highlighted as '-1's!");
         //printSudoku(sudokuSol);
-    	compareAndReplace(sudokuSol,sudokuwrong);
+    	invalidator(sudokuSol,sudokuwrong);
     	for (int[] row : sudokuwrong) {
 		    for (int num : row) {
 		        System.out.print(num + " ");
@@ -123,7 +123,7 @@ public class sudokuReviewer {
         return true;
     }
     
-    private static void compareAndReplace(int[][] solution1, int[][] solution2) {
+    private static void invalidator(int[][] solution1, int[][] solution2) {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 if (solution1[i][j] != solution2[i][j]) {
